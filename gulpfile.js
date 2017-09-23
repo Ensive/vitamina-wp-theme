@@ -54,7 +54,7 @@ var jsVendorFile            = 'vendors'; // Compiled JS vendors file name.
 // Default set to vendors i.e. vendors.js.
 
 // JS Custom related.
-var jsCustomSRC             = './assets/scripts/main/*.js'; // Path to JS custom scripts folder.
+var jsCustomSRC             = './assets/scripts/custom/*.js'; // Path to JS custom scripts folder.
 var jsCustomDestination     = './assets/scripts/'; // Path to place the compiled JS custom scripts file.
 var jsCustomFile            = 'main'; // Compiled JS custom file name.
 // Default set to custom i.e. custom.js.
@@ -66,8 +66,8 @@ var imagesDestination       = './assets/images/'; // Destination folder of optim
 // Watch files paths.
 var styleWatchFiles         = './assets/styles/**/*.scss'; // Path to all *.scss files inside css folder and inside them.
 var vendorJSWatchFiles      = './assets/scripts/vendors/*.js'; // Path to all vendor JS files.
-var customJSWatchFiles      = './assets/scripts/main/*.js'; // Path to all custom JS files.
-var projectPHPWatchFiles    = './**/*.php'; // Path to all PHP files.
+var customJSWatchFiles      = './assets/scripts/custom/*.js'; // Path to all custom JS files.
+var projectPHPWatchFiles    = './**/**/*.php'; // Path to all PHP files.
 
 
 // Browsers you care about for autoprefixing.

@@ -7,3 +7,61 @@ Author: Anton Goncharuk
 Author URI: http://lnkd.in/VtMe8V
 Tags: vitamina, landing page, white, yellow, gray, black, css3, html5, animation, responsive
 */
+
+//@import
+
+// base
+@import 'base/reset';
+@import 'base/variables';
+@import 'base/fontello';
+@import 'base/utils';
+
+//.browserupgrade {
+//  background-color: #fcfcfc;
+//  color: #000;
+//  margin: 0.2em 0;
+//  padding: 0.2em 0;
+//}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  //font-size: 62.5%;
+  font-size: 50%;
+  overflow-x: hidden;
+}
+
+body {
+  background: #fafafa;
+  color: #ccc;
+  font-family: $roboto;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  margin: 60px auto 0 0;
+  max-width: 1720px;
+  padding: 0 20px 0 0;
+  width: 100%;
+}
+
+.content {
+  width: 81.395348837209%;
+  float: right;
+}
+
+// layout
+@import 'layout/sidebar';
+
+// components
+@import 'components/project-item';
+@import 'components/project-btn';
+

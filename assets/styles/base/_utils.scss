@@ -1,0 +1,24 @@
+// clearfix
+.u-clear {
+  zoom: 1;
+
+  &::before,
+  &::after {
+    content: '';
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+.u-hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+//.u-left { float: left; }
+//.u-right { float: right }
+
+.u-text-center { text-align: center; }
