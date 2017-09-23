@@ -29,51 +29,51 @@
 
 // START Editing Project Variables.
 // Project related.
-var project                 = 'WPGulpTheme'; // Project Name.
-var projectURL              = 'wpgulp.dev'; // Local project URL of your already running WordPress site. Could be something like local.dev or localhost:8888.
+var project                 = 'WPVitaminaTheme'; // Project Name.
+var projectURL              = 'dev.vitamina.ro'; // Local project URL of your already running WordPress site. Could be something like local.dev or localhost:8888.
 var productURL              = './'; // Theme/Plugin URL. Leave it like it is, since our gulpfile.js lives in the root folder.
 
 // Translation related.
-var text_domain             = 'WPGULP'; // Your textdomain here.
-var translationFile         = 'WPGULP.pot'; // Name of the transalation file.
-var translationDestination  = './languages' // Where to save the translation files.
-var packageName             = 'WPGULP'; // Package name.
-var bugReport               = 'https://AhmadAwais.com/contact/'; // Where can users report bugs.
-var lastTranslator          = 'Ahmad Awais <your_email@email.com>'; // Last translator Email ID.
-var team                    = 'WPTie <your_email@email.com>'; // Team's Email ID.
+var text_domain             = 'vitamina'; // Your textdomain here.
+var translationFile         = 'vitamina.pot'; // Name of the transalation file.
+var translationDestination  = './languages'; // Where to save the translation files.
+var packageName             = 'vitamina'; // Package name.
+var bugReport               = 'http://www.vitamina.ro/'; // Where can users report bugs.
+var lastTranslator          = 'Anton Honcharuk <antonge92@gmail.com>'; // Last translator Email ID.
+var team                    = 'Anton Honcharuk <antonge92@gmail.com>'; // Team's Email ID.
 
 // Style related.
-var styleSRC                = './assets/css/style.scss'; // Path to main .scss file.
+var styleSRC                = './assets/styles/style.scss'; // Path to main .scss file.
 var styleDestination        = './'; // Path to place the compiled CSS file.
 // Default set to root folder.
 
 // JS Vendor related.
-var jsVendorSRC             = './assets/js/vendor/*.js'; // Path to JS vendor folder.
-var jsVendorDestination     = './assets/js/'; // Path to place the compiled JS vendors file.
+var jsVendorSRC             = './assets/scripts/vendors/*.js'; // Path to JS vendor folder.
+var jsVendorDestination     = './assets/scripts/'; // Path to place the compiled JS vendors file.
 var jsVendorFile            = 'vendors'; // Compiled JS vendors file name.
 // Default set to vendors i.e. vendors.js.
 
 // JS Custom related.
-var jsCustomSRC             = './assets/js/custom/*.js'; // Path to JS custom scripts folder.
-var jsCustomDestination     = './assets/js/'; // Path to place the compiled JS custom scripts file.
-var jsCustomFile            = 'custom'; // Compiled JS custom file name.
+var jsCustomSRC             = './assets/scripts/main/*.js'; // Path to JS custom scripts folder.
+var jsCustomDestination     = './assets/scripts/'; // Path to place the compiled JS custom scripts file.
+var jsCustomFile            = 'main'; // Compiled JS custom file name.
 // Default set to custom i.e. custom.js.
 
 // Images related.
-var imagesSRC               = './assets/img/raw/**/*.{png,jpg,gif,svg}'; // Source folder of images which should be optimized.
-var imagesDestination       = './assets/img/'; // Destination folder of optimized images. Must be different from the imagesSRC folder.
+var imagesSRC               = './assets/images/raw/**/*.{png,jpg,gif,svg}'; // Source folder of images which should be optimized.
+var imagesDestination       = './assets/images/'; // Destination folder of optimized images. Must be different from the imagesSRC folder.
 
 // Watch files paths.
-var styleWatchFiles         = './assets/css/**/*.scss'; // Path to all *.scss files inside css folder and inside them.
-var vendorJSWatchFiles      = './assets/js/vendor/*.js'; // Path to all vendor JS files.
-var customJSWatchFiles      = './assets/js/custom/*.js'; // Path to all custom JS files.
+var styleWatchFiles         = './assets/styles/**/*.scss'; // Path to all *.scss files inside css folder and inside them.
+var vendorJSWatchFiles      = './assets/scripts/vendors/*.js'; // Path to all vendor JS files.
+var customJSWatchFiles      = './assets/scripts/main/*.js'; // Path to all custom JS files.
 var projectPHPWatchFiles    = './**/*.php'; // Path to all PHP files.
 
 
 // Browsers you care about for autoprefixing.
 // Browserlist https        ://github.com/ai/browserslist
 const AUTOPREFIXER_BROWSERS = [
-    'last 2 version',
+    'last 3 version',
     '> 1%',
     'ie >= 9',
     'ie_mob >= 10',
