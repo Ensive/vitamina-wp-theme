@@ -11,14 +11,14 @@ class Theme_Assets {
       'css-main',
       get_stylesheet_directory_uri() . '/style.min.css',
       null,
-      'screen'
+      time()
     );
   }
 
   public function include_js() {
     wp_enqueue_script(
       'js-vitamina-vendors',
-      get_stylesheet_directory_uri() . '/assets/scripts/vendors.js',
+      get_stylesheet_directory_uri() . '/assets/scripts/vendors.min.js',
       [],
       time(),
       true
@@ -26,7 +26,7 @@ class Theme_Assets {
 
     wp_enqueue_script(
       'js-vitamina-theme',
-      get_stylesheet_directory_uri() . '/assets/scripts/main.js',
+      get_stylesheet_directory_uri() . '/assets/scripts/main.min.js',
       [ 'js-vitamina-vendors' ],
       time(),
       true

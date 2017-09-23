@@ -69,3 +69,11 @@ assets/sass/HTML
 assets/sass/Rails
 HTML
 Rails
+
+# ignore generated bundles
+main.js
+main.min.js
+vendors.js
+vendors.min.js
+assets/images/raw/*
+style.min.css

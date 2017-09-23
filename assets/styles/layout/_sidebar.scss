@@ -19,7 +19,7 @@
   }
 
   &__link {
-    color: #ccc;
+    color: darken(#ccc, 20%);
     display: block;
     font-family: $roboto;
     font-size: 2rem;
