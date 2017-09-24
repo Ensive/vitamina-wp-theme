@@ -1,4 +1,5 @@
 <!-- TODO: add forms markup here ... -->
+<?php wp_footer(); ?>
 <script>
   // Google Analytics
   // TODO: Google Analytics: change UA-XXXXX-X to be your site's ID.
@@ -31,7 +32,5 @@
     s.parentNode.insertBefore(wf, s);
   })();
 </script>
-
-<?php wp_footer(); ?>
 </body>
 </html>
