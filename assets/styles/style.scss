@@ -13,6 +13,7 @@ Tags: vitamina, landing page, white, yellow, gray, black, css3, html5, animation
 // base
 @import 'base/reset';
 @import 'base/variables';
+@import 'base/mixins';
 @import 'base/fontello';
 @import 'base/utils';
 
@@ -49,13 +50,21 @@ img {
 .container {
   margin: 60px auto 0 0;
   max-width: 1720px;
-  padding: 0 20px 0 0;
+  padding: 0 20px;
   width: 100%;
+
+  @include media($medium-screen-up) {
+    padding: 0 20px 0 0;
+  }
 }
 
 .content {
-  width: 81.395348837209%;
   float: right;
+  width: 100%;
+
+  @include media($medium-screen-up) {
+    width: 81.395348837209%;
+  }
 }
 
 // layout

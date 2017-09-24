@@ -1,7 +1,7 @@
 .projects {
   margin: 30px 0 0;
 
-  @media (min-width: $medium-screen-up) {
+  @include media($medium-screen-up) {
     margin: 0;
   }
 }
@@ -36,20 +36,23 @@
       visibility: visible;
     }
 
-    &:nth-of-type(3n) { margin-right: 0; }
+    //&:nth-of-type(3n) { margin-right: 0; }
 
-    @media screen and (min-width: $medium-screen-up) {
-      width: 47.826086956522%;
+    @include media($small-screen-up) {
+      margin-right: 3%;
+      width: 48.5%;
 
       &:nth-of-type(2n) {
         margin-right: 0;
       }
     }
 
-    @media screen and (min-width: $large-screen-up) {
+    @include media($large-screen-up) {
+      margin-right: 2.857142857143%;
       width: 31.428571428571%;
 
       &:nth-of-type(2n) { margin-right: 2.857142857143%; }
+      &:nth-of-type(3n) { margin-right: 0; }
     }
   }
 
@@ -106,6 +109,7 @@
     height: 100%;
     left: 0;
     //padding: 37.162162162162% 0 0;
+    opacity: 0;
     padding: 18% 0 0;
     position: absolute;
     right: 0;
@@ -113,9 +117,8 @@
     top: 0;
     transform: translateY(100%);
     transition: transform .2s linear, opacity .2s linear, visibility .2s linear;
-    width: 100%;
-    opacity: 0;
     visibility: hidden;
+    width: 100%;
   }
 
   &__read-more {
@@ -142,11 +145,11 @@
 
   &__social-share {
     color: #fff;
+    display: inline-block;
     font-family: 'fontello';
     font-size: 3rem;
-    display: inline-block;
-    text-decoration: none;
     margin-right: 5px;
+    text-decoration: none;
     transition: transform .2s ease-in, color .2s ease-in;
 
     &:hover {

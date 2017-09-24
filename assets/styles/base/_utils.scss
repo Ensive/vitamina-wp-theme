@@ -19,19 +19,35 @@
 }
 
 .u-seo-hidden {
-  font-size: 0;
-  width: 1px;
-  height: 1px;
-  display: inline-block;
-  overflow: hidden;
-  position: absolute;
   border: 0;
-  padding: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  display: inline-block;
+  font-size: 0;
+  height: 1px;
   margin: 0;
-  clip: rect(1px,1px,1px,1px);
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.u-mobile-only {
+
+}
+
+.u-desktop-only {
+  display: none;
+  visibility: hidden;
+
+  @include media($medium-screen-up) {
+    display: block;
+    visibility: visible;
+  }
 }
 
 //.u-left { float: left; }
 //.u-right { float: right }
 
-.u-text-center { text-align: center; }
+.u-text-center {
+  text-align: center;
+}
