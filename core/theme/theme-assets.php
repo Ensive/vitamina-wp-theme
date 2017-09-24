@@ -1,9 +1,14 @@
 <?php
 
 class Theme_Assets {
-  public function __construct() {
-    add_action( 'wp_enqueue_scripts', array( $this, 'include_js' ) );
-    add_action( 'wp_enqueue_scripts', array( $this, 'include_css' ) );
+  public static function init() {
+    $instance = new self();
+
+    add_action( 'wp_enqueue_scripts', array( $instance, 'include_js' ) );
+    add_action( 'wp_enqueue_scripts', array( $instance, 'include_css' ) );
+  }
+
+  private function __construct() {
   }
 
   public function include_css() {
@@ -34,4 +39,4 @@ class Theme_Assets {
   }
 }
 
-new Theme_Assets();
+Theme_Assets::init();
