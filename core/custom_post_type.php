@@ -119,48 +119,50 @@ class Custom_Post_Type {
   }
 
   public function add_meta_box( $title, $fields = array(), $context = 'normal', $priority = 'default' ) {
-    if ( ! empty( $title ) ) {
-      $post_type_name = $this->post_type_name;
-
-      // meta variables
-      $box_id       = $this->prefix . $this->snakify( $title );
-      $box_title    = $this->beautify( $title );
-      $box_context  = $context;
-      $box_priority = $priority;
-
-      // make the fields global
-      global $custom_fields;
-      $custom_fields[ $title ] = $fields;
-
-      add_action( 'admin_init', function () use ( $box_id, $box_title, $post_type_name, $box_context, $box_priority, $fields ) {
-        add_meta_box(
-          $box_id,
-          $box_title,
-          function ( $post, $data ) {
-            global $post;
-
-            wp_nonce_field( plugin_basename( __FILE__ ), 'custom_post_type' );
-
-            // Get all inputs from $data
-            $custom_fields = $data['args'][0];
-
-            // Get the saved values
-
-            // Check the array and loop through it
-            if ( ! empty( $custom_fields ) ) {
-              foreach ( $custom_fields as $label => $type ) {
-                $field_id_name = $this->get_field_id_name( $data['id'], $label );
-                echo $this->get_field_markup( $field_id_name, $label, $data );
-              }
-            }
-          },
-          $post_type_name,
-          $box_context,
-          $box_priority,
-          array( $fields )
-        );
-      } );
+    if ( empty( $title ) ) {
+      return;
     }
+
+    $post_type_name = $this->post_type_name;
+
+    // meta variables
+    $box_id       = $this->prefix . $this->snakify( $title );
+    $box_title    = $this->beautify( $title );
+    $box_context  = $context;
+    $box_priority = $priority;
+
+    // make the fields global
+    global $custom_fields;
+    $custom_fields[ $title ] = $fields;
+
+    add_action( 'admin_init', function () use ( $box_id, $box_title, $post_type_name, $box_context, $box_priority, $fields ) {
+      add_meta_box(
+        $box_id,
+        $box_title,
+        function ( $post, $data ) {
+          global $post;
+
+          wp_nonce_field( plugin_basename( __FILE__ ), 'custom_post_type' );
+
+          // Get all inputs from $data
+          $custom_fields = $data['args'][0];
+
+          // Get the saved values
+
+          // Check the array and loop through it
+          if ( ! empty( $custom_fields ) ) {
+            foreach ( $custom_fields as $label => $type ) {
+              $field_id_name = $this->get_field_id_name( $data['id'], $label );
+              echo $this->get_field_markup( $field_id_name, $label, $data );
+            }
+          }
+        },
+        $post_type_name,
+        $box_context,
+        $box_priority,
+        array( $fields )
+      );
+    } );
   }
 
   private function save() {
