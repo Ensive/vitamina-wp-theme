@@ -35,5 +35,3 @@ class Theme_Assets {
 }
 
 new Theme_Assets();
-
-?>

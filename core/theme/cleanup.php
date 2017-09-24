@@ -2,8 +2,7 @@
 
 class Theme_Cleanup {
   public function __construct() {
-    add_action( 'get_header', array( $this, 'filter_head' ) );
-    add_filter( 'the_generator', array( $this, 'remove_wp_version') );
+    add_action( 'after_setup_theme', array( $this, 'do_cleanup' ) );
 
     // remove emojicons
     add_action( 'init', array( $this, 'disable_wp_emojicons' ) );
@@ -12,13 +11,17 @@ class Theme_Cleanup {
     add_action( 'wp_footer', array( $this, 'deregister_script' ) );
   }
 
-  public function filter_head() {
-    remove_action( 'wp_head', '_admin_bar_bump_cb' );
+  public function do_cleanup() {
     remove_action( 'wp_head', 'wp_generator' );
-  }
+    remove_action( 'wp_head', 'wlwmanifest_link' );
+    remove_action( 'wp_head', 'rsd_link' );
+    remove_action( 'wp_head', 'wp_shortlink_wp_head' );
+    remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10 );
 
-  public function remove_wp_version() {
-    return '';
+    add_filter( 'the_generator', '__return_false' );
+    add_filter( 'show_admin_bar', '__return_false' );
+
+    remove_action('set_comment_cookies', 'wp_set_comment_cookies');
   }
 
   public function disable_wp_emojicons() {
@@ -47,5 +50,3 @@ class Theme_Cleanup {
 }
 
 new Theme_Cleanup();
-
-?>
