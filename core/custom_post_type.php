@@ -148,12 +148,15 @@ class Custom_Post_Type {
           $custom_fields = $data['args'][0];
 
           // Get the saved values
+          $meta = get_post_custom( $post->ID );
 
           // Check the array and loop through it
           if ( ! empty( $custom_fields ) ) {
+
+            // Loop through custom fields specified when creating meta box
             foreach ( $custom_fields as $label => $type ) {
               $field_id_name = $this->get_field_id_name( $data['id'], $label );
-              echo $this->get_field_markup( $field_id_name, $label, $data );
+              echo $this->get_field_markup( $field_id_name, $label, $meta );
             }
           }
         },
@@ -173,7 +176,7 @@ class Custom_Post_Type {
         return;
       }
 
-      if ( $this->has_value_in_post() && ! $this->has_valid_nonce() ) {
+      if ( $this->has_value_in_post() || ! $this->has_valid_nonce() ) {
         return;
       }
 
@@ -198,11 +201,13 @@ class Custom_Post_Type {
   }
 
   private function has_value_in_post() {
-    return ! empty( $_POST['custom_post_type'] );
+    return ! isset( $_POST['custom_post_type'] );
   }
 
-  private function get_field_markup( $name, $label, $data ) {
-    return '<label for="' . $name . '">' . $label . '</label><input type="text" name="custom_meta[' . $name . ']" id="' . $name . '" value="' . $data[ $name ][0] . '" />';
+  private function get_field_markup( $name, $label, $meta ) {
+    $value = empty( $meta[ $name ][0] ) ? '' : $meta[ $name ][0];
+
+    return '<label for="' . $name . '">' . $label . '</label><input type="text" name="custom_meta[' . $name . ']" id="' . $name . '" value="' . $value . '" />';
   }
 
   private function get_field_id_name( $id, $label ) {
