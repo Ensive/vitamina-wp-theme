@@ -5,6 +5,6 @@ define( 'TEMP_PATH', get_bloginfo( 'stylesheet_directory' ) );
 define( 'IMAGES', TEMP_PATH . '/assets/images/' );
 
 // include js & css
-include( 'core/theme/enqueue_assets.php' );
+include( 'core/theme/theme-assets.php' );
 include( 'core/theme/theme-cleanup.php' );
 include( 'core/theme/theme-support.php' );
