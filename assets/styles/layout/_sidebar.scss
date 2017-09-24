@@ -1,6 +1,6 @@
 .sidebar {
   background-color: #fff;
-  box-shadow: 1px 20px 25px rgba(0,0,0,.1);
+  box-shadow: 1px 20px 25px rgba(0, 0, 0, .1);
   //margin: 0 2.325581395349 0 0;
   margin-right: 2.325581395349%;
   padding: 28px 20px 250px;
@@ -50,10 +50,12 @@
       //transform: translateX(5px);
     }
 
-    &.is-active { color: $link-color; }
-    &.is-active::after { border-color: $link-color; }
-    &.is-active:hover::after {
-      //display: block;
+    &.is-active {
+      color: lighten($link-color, 30%);
+    }
+
+    &.is-active::after {
+      border-color: lighten($link-color, 30%);
       opacity: 1;
       visibility: visible;
     }
