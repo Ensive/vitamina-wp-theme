@@ -21,7 +21,7 @@ class Theme_Cleanup {
     add_filter( 'the_generator', '__return_false' );
     add_filter( 'show_admin_bar', '__return_false' );
 
-    remove_action('set_comment_cookies', 'wp_set_comment_cookies');
+    remove_action( 'set_comment_cookies', 'wp_set_comment_cookies' );
   }
 
   public function disable_wp_emojicons() {
