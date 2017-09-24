@@ -13,7 +13,7 @@ class VI_Setup_Project_Post_Type {
   }
 
   private function __construct() {
-    $this->cpt = new Custom_Post_Type( 'Project' );
+    $this->cpt = new VI_Custom_Post_Type( 'Project' );
     $this->add_project_taxonomies();
     $this->add_project_meta_boxes();
   }

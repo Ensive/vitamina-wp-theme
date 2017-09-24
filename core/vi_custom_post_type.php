@@ -1,6 +1,6 @@
 <?php
 
-class Custom_Post_Type {
+class VI_Custom_Post_Type {
   public $post_type_name;
   public $post_type_args;
   public $post_type_labels;

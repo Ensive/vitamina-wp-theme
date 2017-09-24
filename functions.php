@@ -10,7 +10,7 @@ include( 'core/theme/theme-cleanup.php' );
 include( 'core/theme/theme-support.php' );
 
 // PHP helper classes
-include( 'core/custom_post_type.php' );
+include( 'core/vi_custom_post_type.php' );
 
 // Project custom post type
 include( 'core/project-cpt.php' );
