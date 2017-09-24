@@ -6,5 +6,5 @@ define( 'IMAGES', TEMP_PATH . '/assets/images/' );
 
 // include js & css
 include( 'core/theme/enqueue_assets.php' );
-include( 'core/theme/cleanup.php' );
-include( 'core/theme/support.php' );
+include( 'core/theme/theme-cleanup.php' );
+include( 'core/theme/theme-support.php' );
