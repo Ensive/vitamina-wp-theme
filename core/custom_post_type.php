@@ -94,7 +94,7 @@ class Custom_Post_Type {
 
         $args = array_merge(
           array(
-            'label'             => $plural,
+            // 'label'             => $plural,
             'labels'            => $labels,
             'public'            => true,
             'show_ui'           => true,
