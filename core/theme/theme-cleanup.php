@@ -1,14 +1,29 @@
 <?php
 
 class Theme_Cleanup {
-  public function __construct() {
+  private static $instance;
+
+  public static function init() {
+    if ( null === self::$instance ) {
+      self::$instance = new self();
+    }
+
+    return self::$instance;
+  }
+
+  private function __construct() {
+    $this->add_actions();
+    $this->add_filters();
+  }
+
+  private function add_actions() {
     add_action( 'after_setup_theme', array( $this, 'do_cleanup' ) );
-
-    // remove emojicons
     add_action( 'init', array( $this, 'disable_wp_emojicons' ) );
-    add_filter( 'tiny_mce_plugins', array( $this, 'disable_emojicons_tinymce' ) );
-
     add_action( 'wp_footer', array( $this, 'deregister_script' ) );
+  }
+
+  private function add_filters() {
+    add_filter( 'tiny_mce_plugins', array( $this, 'disable_emojicons_tinymce' ) );
   }
 
   public function do_cleanup() {
@@ -49,4 +64,5 @@ class Theme_Cleanup {
   }
 }
 
-new Theme_Cleanup();
+// create instance
+$theme_cleanup = Theme_Cleanup::init();
