@@ -27,10 +27,10 @@
   your browser</a> to improve your experience.</p>
 <![endif]-->
 
-<header class="header u-hidden">
+<header class="header">
   <form action="#" class="search-form">
     <button class="search__submit" type="submit"></button>
-    <input class="search__input" type="search" placeholder=""/>
+    <input class="search__input" type="search" placeholder="" />
     <!-- auto complete -->
   </form>
 </header>
