@@ -12,9 +12,12 @@
       <a class="sidebar__link" href="#">#Toate</a>
     </nav>
 
-    <div class="sidebar__logo" role="banner">
-      <img src="<?php echo IMAGES . 'vitamina-logo.jpg' ?>" alt="Vitamina logo">
-    </div>
+    <a href="<?php bloginfo('url'); ?>" class="sidebar__logo" role="banner">
+      <img src="<?php echo IMAGES . 'vitamina-logo.jpg' ?>" alt="Vitamina logo" />
+    </a>
+    <?php if ( is_home() ) { ?>
+      <h1 class="u-seo-hidden"><?php bloginfo('name'); ?></h1>
+    <?php } ?>
   </div>
 
   <main class="content">
