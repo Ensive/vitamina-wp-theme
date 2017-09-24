@@ -206,8 +206,9 @@ class Custom_Post_Type {
 
   private function get_field_markup( $name, $label, $meta ) {
     $value = empty( $meta[ $name ][0] ) ? '' : $meta[ $name ][0];
+    $label = '<label class="post-attributes-label" for="' . $name . '">' . $label . '</label><input class="widefat" type="text" name="custom_meta[' . $name . ']" id="' . $name . '" value="' . $value . '" />';
 
-    return '<label for="' . $name . '">' . $label . '</label><input type="text" name="custom_meta[' . $name . ']" id="' . $name . '" value="' . $value . '" />';
+    return '<p class="post-attributes-label-wrapper">' . $label . '</p>';
   }
 
   private function get_field_id_name( $id, $label ) {
@@ -228,6 +229,8 @@ class Custom_Post_Type {
     if ( $last == 'y' ) {
       $cut    = substr( $string, 0, - 1 );
       $plural = $cut . 'ies';
+    } else if ( $last == 's' ) {
+      $plural = $string . 'es';
     } else {
       $plural = $string . 's';
     }
