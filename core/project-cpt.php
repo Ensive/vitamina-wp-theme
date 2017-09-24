@@ -13,9 +13,18 @@ class VI_Setup_Project_Post_Type {
   }
 
   private function __construct() {
-    $this->cpt = new VI_Custom_Post_Type( 'Project' );
+    $this->cpt = $this->create_project_post_type();
     $this->add_project_taxonomies();
     $this->add_project_meta_boxes();
+  }
+
+  private function create_project_post_type() {
+    return new VI_Custom_Post_Type(
+      'Project',
+      array(
+        'menu_position' => 5,
+        'menu_icon'     => 'dashicons-clipboard'
+      ) );
   }
 
   private function add_project_taxonomies() {
