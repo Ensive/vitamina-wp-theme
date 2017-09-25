@@ -42,6 +42,7 @@ body {
   color: #ccc;
   font-family: $roboto;
   padding: 0 0 10px;
+  overflow-x: hidden;
 }
 
 img {
@@ -51,7 +52,7 @@ img {
 .container {
   margin: 60px auto 0 0;
   max-width: 1720px;
-  padding: 0 20px;
+  padding: 0 10px;
   width: 100%;
 
   @include media($small-screen-up) {
