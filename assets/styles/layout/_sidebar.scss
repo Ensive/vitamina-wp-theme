@@ -20,7 +20,7 @@
   }
 
   &__menu-toggle {
-    color: #d1ba37;
+    color: $link-color;
     display: block;
     font-size: 2.5rem;
     padding: 10px 0 10px;
@@ -61,9 +61,7 @@
     display: none;
     padding: 0 0 20px;
 
-    @include media($medium-screen-up) {
-      display: block !important;
-    }
+    @include media($medium-screen-up) { display: block !important; }
   }
 
   &__link {
@@ -79,13 +77,11 @@
     width: 100%;
     //margin: 0 0 32px;
 
-    &:hover {
-      text-decoration: underline;
-    }
+    &:first-child { padding: 22px 0 11px; }
 
-    &.is-active {
-      color: $link-color;
-    }
+    &:hover { text-decoration: underline; }
+
+    &.is-active { color: $link-color; }
 
     &::after {
       border-radius: 50%;
@@ -94,36 +90,26 @@
       font-size: 2.5rem;
       position: absolute;
       right: 0; // -5
-      top: 10px;
+      top: 9px;
       visibility: hidden;
 
-      @include media($large-screen-up) {
-        top: 16px;
-      }
+      @include media($large-screen-up) { top: 16px; }
     }
 
     &.is-active::after {
       border-color: $link-color;
       visibility: visible;
 
-      @include media($medium-screen-up) {
-        display: none;
-        visibility: hidden;
-      }
-
-      @include media($large-screen-up) {
-        display: block;
-        visibility: visible;
-      }
+      @include media($medium-screen-up) { display: none; visibility: hidden; }
+      @include media($large-screen-up) { display: block; visibility: visible; }
     }
 
     @include media($medium-screen-up) {
       padding: 16px 0;
+      &:first-child { padding: 16px 0; }
     }
 
-    @include media($xlarge-screen-up) {
-      font-size: 2.5rem;
-    }
+    @include media($xlarge-screen-up) { font-size: 2.5rem; }
   }
 
   &__logo {

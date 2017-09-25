@@ -1,3 +1,6 @@
+<footer class="footer u-text-center">
+  &copy; <?php echo date( 'Y' ); ?> <a href="/" class="footer__link">Vitamin A.</a> <?php _e( 'All rights reserved', TEXT_DOMAIN ); ?>
+</footer>
 <!-- TODO: add forms markup here ... -->
 <?php wp_footer(); ?>
 <script>

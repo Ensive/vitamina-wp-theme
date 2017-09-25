@@ -72,7 +72,9 @@ img {
 }
 
 // layout
+@import 'layout/header';
 @import 'layout/sidebar';
+@import 'layout/footer';
 
 // components
 @import 'components/project-item';
