@@ -15,11 +15,11 @@
     display: block;
     font-family: $roboto-slab;
     font-weight: 300;
-    margin: 0 auto 2.857142857143%;
+    margin: 0 auto 5%;
     max-width: 440px;
     padding: 20px;
     position: relative;
-    transition: box-shadow .3s ease;
+    transition: box-shadow .3s ease, width .3s linear;
     width: 100%;
 
     &:hover {
@@ -38,22 +38,15 @@
       margin: 0 3% 2.857142857143% 0;
       width: 48.5%;
 
-      &:nth-of-type(2n) {
-        margin-right: 0;
-      }
+      &:nth-of-type(2n) { margin-right: 0; }
     }
 
     @include media($large-screen-up) {
       margin-right: 2.857142857143%;
       width: 31.428571428571%;
 
-      &:nth-of-type(2n) {
-        margin-right: 2.857142857143%;
-      }
-
-      &:nth-of-type(3n) {
-        margin-right: 0;
-      }
+      &:nth-of-type(2n) { margin-right: 2.857142857143%; }
+      &:nth-of-type(3n) { margin-right: 0; }
     }
   }
 

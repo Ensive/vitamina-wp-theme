@@ -32,7 +32,13 @@
 }
 
 .u-mobile-only {
+  display: block;
+  visibility: visible;
 
+  @include media($medium-screen-up) {
+    display: none;
+    visibility: hidden;
+  }
 }
 
 .u-desktop-only {

@@ -38,7 +38,7 @@ html {
 }
 
 body {
-  background: #fafafa;
+  background: darken(#fafafa, 1%);
   color: #ccc;
   font-family: $roboto;
 }
@@ -52,6 +52,10 @@ img {
   max-width: 1720px;
   padding: 0 20px;
   width: 100%;
+
+  @include media($small-screen-up) {
+    padding: 0 20px;
+  }
 
   @include media($medium-screen-up) {
     padding: 0 20px 0 0;

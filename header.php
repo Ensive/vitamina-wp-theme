@@ -18,7 +18,10 @@
   <meta name="application-name" content="Vitamin A.">
   <meta name="theme-color" content="#eee8cb">
 
+  <!--[if IE]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" async></script>
+  <![endif]-->
+
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
