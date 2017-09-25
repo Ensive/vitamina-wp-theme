@@ -3,6 +3,7 @@
   <nav class="sidebar__nav">
     <a class="sidebar__link" href="#">#Birou</a>
     <a class="sidebar__link is-active" href="#">#Proiecte</a>
+    <a class="sidebar__link is-active" href="#">#Interior</a>
     <a class="sidebar__link is-active" href="#">#Patrimoniu</a>
     <a class="sidebar__link" href="#">#Urbanism</a>
     <a class="sidebar__link" href="#">#Arhitectura</a>

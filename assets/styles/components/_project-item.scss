@@ -29,7 +29,7 @@
 
     &:hover .project__btn {
       opacity: 1;
-      transform: translateX(50%);
+      transform: translateX(35%);
       visibility: visible;
     }
 
@@ -111,7 +111,7 @@
     left: 0;
     //padding: 37.162162162162% 0 0;
     opacity: 0;
-    padding: 18% 0 0;
+    padding: 18% 8% 0;
     position: absolute;
     right: 0;
     text-align: center;
@@ -129,9 +129,10 @@
     font-size: 1.6rem;
     height: 67px;
     line-height: 67px;
+    max-width: 200px;
     text-decoration: none;
     transition: background-color .3s ease, color .3s ease;
-    width: 200px;
+    width: 100%;
 
     &:hover {
       background-color: #fff;
@@ -141,7 +142,7 @@
 
   &__social {
     font-size: 0;
-    margin: 30px 0;
+    margin: 11% 0 0;
   }
 
   &__social-share {
