@@ -1,0 +1,27 @@
+.projects.is-open .project__item {
+
+  @include media($small-screen-up) {
+    &:nth-of-type(2n) { margin-right: 2.857142857143%; }
+    &:nth-of-type(2n + 1) { margin-right: 0; }
+  }
+
+  @include media($large-screen-up) {
+    &:nth-of-type(2n + 1) { margin-right: 2.857142857143%; }
+    &:nth-of-type(3n + 1) { margin-right: 0; }
+  }
+}
+
+.project__item.is-open {
+  position: relative;
+  width: 100%;
+  z-index: 2;
+
+  @include media($small-screen-up) {
+    max-width: 100%;
+  }
+}
+
+// TODO: review
+.project__item.is-open .project__actions {
+  display: none;
+}
