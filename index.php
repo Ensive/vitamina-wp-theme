@@ -21,7 +21,7 @@
 
       if ( $projects_query->have_posts() ) : while ( $projects_query->have_posts() ) : $projects_query->the_post(); ?>
         <!-- TODO: clean up php tags -->
-        <?php get_template_part('card'); ?>
+        <?php get_template_part('components/card'); ?>
       <?php endwhile; wp_reset_postdata(); ?>
       <?php else: ?>
         <p class="projects__none text mod-regular mod-black">
