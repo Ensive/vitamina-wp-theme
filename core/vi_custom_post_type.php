@@ -187,7 +187,8 @@ class VI_Custom_Post_Type {
 
         foreach ( $custom_fields as $title => $fields ) {
           foreach ( $fields as $label => $type ) {
-            $field_id_name = $this->get_field_id_name( $title, $label );
+            // TODO: fix issue with prefix
+            $field_id_name = $this->prefix . $this->get_field_id_name( $title, $label );
             update_post_meta( $post->ID, $field_id_name, $_POST['custom_meta'][ $field_id_name ] );
           }
         }

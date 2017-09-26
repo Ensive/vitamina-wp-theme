@@ -6,6 +6,11 @@
   }
 }
 
+.projects__none {
+  background-color: $white;
+  padding: 20px;
+}
+
 .project {
 
   &__item {
@@ -19,7 +24,8 @@
     max-width: 440px;
     padding: 20px;
     position: relative;
-    transition: box-shadow .3s ease, width .3s linear;
+    //transition: box-shadow .3s ease, width .3s linear;
+    transition: box-shadow .3s ease;
     width: 100%;
 
     &:hover {
@@ -153,3 +159,5 @@
     }
   }
 }
+
+@import 'project-item-is-open';

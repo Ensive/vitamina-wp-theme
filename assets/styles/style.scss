@@ -11,11 +11,11 @@ Tags: vitamina, landing page, white, yellow, gray, black, css3, html5, animation
 //@import
 
 // base
-@import 'base/reset';
 @import 'base/variables';
 @import 'base/mixins';
+@import 'base/reset';
 @import 'base/fontello';
-@import 'base/utils';
+@import 'base/typography';
 
 //.browserupgrade {
 //  background-color: #fcfcfc;
@@ -81,4 +81,7 @@ img {
 // components
 @import 'components/project-item';
 @import 'components/project-btn';
+
+// helper css
+@import 'base/utils';
 

@@ -5,169 +5,33 @@
   <?php get_sidebar(); ?>
 
   <main class="content">
-    <div class="projects u-clear">
-      <article class="project__item">
-        <header>
-          <h2 class="project__title">Masterplan Timişoara</h2>
-        </header>
+    <div class="projects u-clear js-all-cards">
 
-        <p class="project__intro">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-          <!--incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.-->
+      <?php
+
+      // projects
+      $projects_args = array(
+        'post_type' => 'project',
+        'posts_per_page' => -1,
+        'orderby' => 'modified',
+        'order' => 'ASC'
+      );
+
+      $projects_query = new WP_Query( $projects_args );
+
+      if ( $projects_query->have_posts() ) : while ( $projects_query->have_posts() ) : $projects_query->the_post(); ?>
+        <!-- TODO: clean up php tags -->
+        <?php get_template_part('card'); ?>
+      <?php endwhile; wp_reset_postdata(); ?>
+      <?php else: ?>
+        <p class="projects__none text mod-regular mod-black">
+          <?php _e( 'Sorry, there are no projects matched your criteria.', TEXT_DOMAIN ) ?>
         </p>
+      <?php endif; ?>
 
-        <div class="project__figure">
-          <figure class="project__photo">
-            <img src="<?php echo IMAGES . 'project-image.jpg' ?>" alt="">
-          </figure>
-          <div class="project__actions">
-            <a href="#" class="project__read-more">read more</a>
-            <div class="project__social">
-              <a href="#" class="project__social-share icon-facebook-squared"></a>
-              <a href="#" class="project__social-share icon-twitter"></a>
-            </div>
-          </div>
-        </div>
-
-        <footer class="project__meta">
-          <a href="#" class="project__meta-tag">#magna</a><a href="#" class="project__meta-tag">#aliqua</a><a href="#"
-                                                                                                              class="project__meta-tag">#enim</a><a
-            href="#" class="project__meta-tag">#minim</a><a href="#" class="project__meta-tag">#veniam</a>
-        </footer>
-
-        <button class="project__btn"></button>
-      </article>
-
-      <article class="project__item">
-        <header>
-          <h2 class="project__title">Masterplan Timişoara</h2>
-        </header>
-
-        <p class="project__intro">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-          <!--incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.-->
-        </p>
-
-        <div class="project__figure">
-          <figure class="project__photo">
-            <img src="<?php echo IMAGES . 'project-image.jpg' ?>" alt="">
-          </figure>
-          <div class="project__actions">
-            <a href="#" class="project__read-more">read more</a>
-            <div class="project__social">
-              <a href="#" class="project__social-share icon-facebook-squared"></a>
-              <a href="#" class="project__social-share icon-twitter"></a>
-            </div>
-          </div>
-        </div>
-
-        <footer class="project__meta">
-          <a href="#" class="project__meta-tag">#magna</a><a href="#" class="project__meta-tag">#aliqua</a><a href="#"
-                                                                                                              class="project__meta-tag">#enim</a><a
-            href="#" class="project__meta-tag">#minim</a><a href="#" class="project__meta-tag">#veniam</a>
-        </footer>
-
-        <button class="project__btn"></button>
-      </article>
-
-      <article class="project__item">
-        <header>
-          <h2 class="project__title">Masterplan Timişoara</h2>
-        </header>
-
-        <p class="project__intro">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-          <!--incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.-->
-        </p>
-
-        <div class="project__figure">
-          <figure class="project__photo">
-            <img src="<?php echo IMAGES . 'project-image.jpg' ?>" alt="">
-          </figure>
-          <div class="project__actions">
-            <a href="#" class="project__read-more">read more</a>
-            <div class="project__social">
-              <a href="#" class="project__social-share icon-facebook-squared"></a>
-              <a href="#" class="project__social-share icon-twitter"></a>
-            </div>
-          </div>
-        </div>
-
-        <footer class="project__meta">
-          <a href="#" class="project__meta-tag">#magna</a><a href="#" class="project__meta-tag">#aliqua</a><a href="#"
-                                                                                                              class="project__meta-tag">#enim</a><a
-            href="#" class="project__meta-tag">#minim</a><a href="#" class="project__meta-tag">#veniam</a>
-        </footer>
-
-        <button class="project__btn"></button>
-      </article>
-
-      <article class="project__item">
-        <header>
-          <h2 class="project__title">Masterplan Timişoara</h2>
-        </header>
-
-        <p class="project__intro">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-          <!--incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.-->
-        </p>
-
-        <div class="project__figure">
-          <figure class="project__photo">
-            <img src="<?php echo IMAGES . 'project-image.jpg' ?>" alt="">
-          </figure>
-          <div class="project__actions">
-            <a href="#" class="project__read-more">read more</a>
-            <div class="project__social">
-              <a href="#" class="project__social-share icon-facebook-squared"></a>
-              <a href="#" class="project__social-share icon-twitter"></a>
-            </div>
-          </div>
-        </div>
-
-        <footer class="project__meta">
-          <a href="#" class="project__meta-tag">#magna</a><a href="#" class="project__meta-tag">#aliqua</a><a href="#"
-                                                                                                              class="project__meta-tag">#enim</a><a
-            href="#" class="project__meta-tag">#minim</a><a href="#" class="project__meta-tag">#veniam</a>
-        </footer>
-
-        <button class="project__btn"></button>
-      </article>
-
-      <article class="project__item">
-        <header>
-          <h2 class="project__title">Masterplan Timişoara</h2>
-        </header>
-
-        <p class="project__intro">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-          <!--incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.-->
-        </p>
-
-        <div class="project__figure">
-          <figure class="project__photo">
-            <img src="<?php echo IMAGES . 'project-image.jpg' ?>" alt="">
-          </figure>
-          <div class="project__actions">
-            <a href="#" class="project__read-more">read more</a>
-            <div class="project__social">
-              <a href="#" class="project__social-share icon-facebook-squared"></a>
-              <a href="#" class="project__social-share icon-twitter"></a>
-            </div>
-          </div>
-        </div>
-
-        <footer class="project__meta">
-          <a href="#" class="project__meta-tag">#magna</a><a href="#" class="project__meta-tag">#aliqua</a><a href="#"
-                                                                                                              class="project__meta-tag">#enim</a><a
-            href="#" class="project__meta-tag">#minim</a><a href="#" class="project__meta-tag">#veniam</a>
-        </footer>
-
-        <button class="project__btn"></button>
-      </article>
     </div>
-
   </main>
+
 </div>
 
 <?php get_footer(); ?>

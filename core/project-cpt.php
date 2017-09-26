@@ -51,6 +51,8 @@ class VI_Setup_Project_Post_Type {
   // project meta boxes
   private function add_project_meta_boxes() {
     $this->cpt->add_meta_box( 'Period', array( 'From' => 'text', 'To' => 'text' ), 'side' );
+    $this->cpt->add_meta_box( 'Client', array( 'Name' => 'text' ), 'side' );
+    $this->cpt->add_meta_box( 'Area', array( 'square meters' => 'text' ), 'side' );
   }
 }
 
