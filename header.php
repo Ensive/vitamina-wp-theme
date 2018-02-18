@@ -32,8 +32,10 @@
 
 <header class="header">
   <form action="#" class="search-form">
-    <button class="search__submit" type="submit"></button>
-    <input class="search__input" type="search" placeholder="" />
-    <!-- auto complete -->
+    <button class="search__submit" type="submit">
+      <i class="icon-search"></i>
+    </button>
+    <!-- TODO: auto complete -->
+    <input class="search__input" type="search" placeholder="Search..." />
   </form>
 </header>

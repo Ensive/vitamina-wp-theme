@@ -32,9 +32,12 @@ Tags: vitamina, landing page, white, yellow, gray, black, css3, html5, animation
 
 html {
   height: 100%;
-  //font-size: 62.5%;
   font-size: 50%;
   overflow-x: hidden;
+
+  @include media($medium-screen-up) {
+    font-size: 62.5%;
+  }
 }
 
 body {
@@ -50,7 +53,10 @@ img {
 }
 
 .container {
-  margin: 60px auto 0 0;
+  display: flex;
+  flex-flow: column wrap;
+  //margin: 30px auto 0 0;
+  margin: 0 auto 0 0;
   max-width: 1720px;
   padding: 0 10px;
   width: 100%;
@@ -60,16 +66,20 @@ img {
   }
 
   @include media($medium-screen-up) {
+    flex-flow: row wrap;
     padding: 0 20px 0 0;
   }
 }
 
 .content {
-  float: right;
   width: 100%;
+  flex: 100%;
+  max-width: 100%;
 
   @include media($medium-screen-up) {
-    width: 81.395348837209%;
+    flex: 80.459770114943%;
+    width: 80.459770114943%;
+    max-width: 80.459770114943%;
   }
 }
 
@@ -79,6 +89,7 @@ img {
 @import 'layout/footer';
 
 // components
+@import 'components/search';
 @import 'components/project-item';
 @import 'components/project-btn';
 

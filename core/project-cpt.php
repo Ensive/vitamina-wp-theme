@@ -53,6 +53,8 @@ class VI_Setup_Project_Post_Type {
     $this->cpt->add_meta_box( 'Period', array( 'From' => 'text', 'To' => 'text' ), 'side' );
     $this->cpt->add_meta_box( 'Client', array( 'Name' => 'text' ), 'side' );
     $this->cpt->add_meta_box( 'Area', array( 'square meters' => 'text' ), 'side' );
+    $this->cpt->add_meta_box( 'Collaborators', array( 'list of people' => 'text' ) );
+    $this->cpt->add_meta_box( 'Consultants', array( 'list of people' => 'text' ) );
   }
 }
 

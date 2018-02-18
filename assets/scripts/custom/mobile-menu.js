@@ -4,7 +4,7 @@
 
   init();
 
-  function init () {
+  function init() {
     $mobileMenuToggle.on('click', toggleMenu);
   }
 

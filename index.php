@@ -5,7 +5,7 @@
   <?php get_sidebar(); ?>
 
   <main class="content">
-    <div class="projects u-clear js-all-cards">
+    <div class="projects js-all-cards">
 
       <?php
 
@@ -14,7 +14,7 @@
         'post_type' => 'project',
         'posts_per_page' => -1,
         'orderby' => 'modified',
-        'order' => 'ASC'
+        'order' => 'DESC'
       );
 
       $projects_query = new WP_Query( $projects_args );

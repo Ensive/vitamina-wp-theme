@@ -1,0 +1,30 @@
+.search-form {
+  display: flex;
+  //margin: 20px 10px 0;
+  //padding: 60px 10px 0;
+  height: 40px;
+}
+
+.search__submit {
+  background: none;
+  border: 0;
+  //color: $base-color;
+  color: lighten($link-color, 45%);
+  flex: 0 0 auto;
+  font-size: 3rem;
+  padding: 0;
+}
+
+.search__input {
+  background: none;
+  border: 0;
+  border-bottom: 1px solid $base-color;
+  flex: 1 0 auto;
+  font-size: 2rem;
+  height: 100%;
+  margin: 0 0 0 10px;
+  max-width: 300px;
+  padding: 4px 10px;
+  width: 100%;
+  -webkit-appearance: none;
+}

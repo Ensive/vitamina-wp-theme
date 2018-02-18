@@ -1,22 +1,18 @@
 .sidebar {
   background-color: #fff;
   box-shadow: 1px 20px 25px rgba(0, 0, 0, .1);
-  //margin: 0 2.325581395349 0 0;
-  margin-right: 2.325581395349%;
+  flex: 100%;
+  height: 100%;
+  margin: 0 2.298850574713% 0 0;
   padding: 0 20px 0;
   position: relative;
   width: 100%;
 
-  // responsive
   @include media($medium-screen-up) {
-    //width: 17.441860465116%;
-    max-width: 300px;
-    padding: 28px 20px 250px;
-    width: 16.279069767442%;
-  }
-
-  .no-flex & {
-    float: left;
+    flex: 17.241379310345;
+    max-width: 17.241379310345%;
+    padding: 28px 20px 320px;
+    width: 17.241379310345%;
   }
 
   &__menu-toggle {
@@ -24,6 +20,7 @@
     display: block;
     font-size: 2.5rem;
     padding: 10px 0 10px;
+    position: relative;
     text-decoration: none;
     width: 100%;
 
@@ -34,7 +31,7 @@
       height: 1px;
       left: 0;
       position: absolute;
-      top: 40px;
+      bottom: 0;
       width: 100%;
     }
 
@@ -44,7 +41,7 @@
       font-family: 'fontello';
       font-size: 2rem;
       position: absolute;
-      right: 20px;
+      right: 0;
       top: 13px;
       transform: rotate(90deg);
     }
@@ -52,7 +49,6 @@
     &.is-open::after {
       content: '\e808';
       font-size: 2.1rem;
-      right: 17px;
       top: 12px;
     }
   }
@@ -75,9 +71,6 @@
     text-decoration: none;
     transition: transform .2s linear;
     width: 100%;
-    //margin: 0 0 32px;
-
-    &:first-child { padding: 22px 0 11px; }
 
     &:hover { text-decoration: underline; }
 
@@ -89,31 +82,39 @@
       font-family: 'fontello';
       font-size: 2.5rem;
       position: absolute;
-      right: 0; // -5
+      right: -3px;
       top: 9px;
       visibility: hidden;
 
-      @include media($large-screen-up) { top: 16px; }
+      @include media($large-screen-up) {
+        top: 13px;
+      }
     }
 
     &.is-active::after {
       border-color: $link-color;
       visibility: visible;
 
-      @include media($medium-screen-up) { display: none; visibility: hidden; }
-      @include media($large-screen-up) { display: block; visibility: visible; }
+      @include media($medium-screen-up) {
+        display: none;
+        visibility: hidden;
+      }
+
+      @include media($large-screen-up) {
+        display: block;
+        visibility: visible;
+      }
     }
 
     @include media($medium-screen-up) {
-      padding: 16px 0;
-      &:first-child { padding: 16px 0; }
+      padding: 12px 0 13px;
     }
 
     @include media($xlarge-screen-up) { font-size: 2.5rem; }
   }
 
   &__logo {
-    bottom: 80px;
+    bottom: 114px;
     left: 0;
     padding: 0 20px 0 0;
     position: absolute;

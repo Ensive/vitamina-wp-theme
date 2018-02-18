@@ -49,7 +49,7 @@ class VI_Custom_Post_Type {
         'labels'            => $labels,
         'public'            => true,
         'show_ui'           => true,
-        'supports'          => array( 'title', 'editor' ),
+        'supports'          => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
         'show_in_nav_menus' => true,
         '_builtin'          => false
       ),
